@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>MP3 플레이어</title>
+</head>
+<body>
+    <h1>MP3 플레이어</h1>
+    <audio controls>
+        <source src="../oneperson_ko.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+    <!-- 경고 창을 표시할 부분 -->
+    <!--<button onclick="showAlert()">경고 표시</button>-->
+
+    <script>
+        function showAlert() {
+            var alertBox = document.createElement('div');
+            alertBox.textContent = '이것은 경고창입니다.';
+            alertBox.style.cssText = 'position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #f8d7da; color: #721c24; padding: 10px; border: 1px solid #f5c6cb; border-radius: 5px; z-index: 9999;';
+            document.body.appendChild(alertBox);
+
+            // 3초 후에 경고창을 숨깁니다.
+            setTimeout(function() {
+                alertBox.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+    {% if alert_message %}
+        <script>
+            showAlert();
+        </script>
+    {% endif %}
+
+
+</body>
+</html>
+

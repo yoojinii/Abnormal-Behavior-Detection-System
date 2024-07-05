@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Flask 경고 창 예제</title>
+    <script>
+        // 페이지 로딩 후 3초 뒤에 경고창을 표시하고, 5초 후에 닫기
+        setTimeout(function() {
+            showAlert();
+        }, 3000); // 3초 후에 showAlert 함수 실행
+
+        function showAlert() {
+            alert('안녕하세요! 이것은 경고 창입니다.');
+            setTimeout(function() {
+                closeAlert();
+            }, 2000); // 5초 후에 closeAlert 함수 실행
+        }
+
+        function closeAlert() {
+            let alertBox = document.getElementById('alertBox');
+            alertBox.style.display = 'none';
+        }
+    </script>
+</head>
+<body>
+    <!-- 경고 창을 표시할 부분 -->
+    <div id="alertBox" style="display: block;">
+        <!-- 원하는 경고 창 디자인과 내용을 추가하세요 -->
+        <p>경고 창이 여기에 표시됩니다.</p>
+    </div>
+</body>
+</html>

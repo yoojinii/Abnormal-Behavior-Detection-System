@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>삐용삐용</title>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            background-color: #F5E1DA;
+        }
+        input{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 200px;
+            height: 30px;
+            margin: auto;
+            margin-top: 10px;
+            line-height: 1000px;
+            border-width: 3px;
+            border-radius: 10px;
+        }
+        button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100px;
+            height: 30px;
+            margin: auto;
+            margin-top: 25px;
+            border-radius: 10px;
+        }
+        #LoginS{
+            border-radius: 10px;
+            border: 5px solid black; /* 테두리를 추가하고 색상을 검정색으로 설정합니다. */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* 그림자 추가 */
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 250px;
+            font-size: 19px;
+        }
+        #LoginF{
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 30px;
+            margin-top: 250px;
+        }
+        h2{
+            margin-top: 65px;
+            margin-bottom: 45px;
+            font-size: 30px;
+            font-family: 'Black Han Sans', sans-serif;
+        }
+        a{
+            font-size: 17px;
+            font-family: 'Black Han Sans', sans-serif;
+            font-weight: lighter;
+            justify-content: center;
+            display: flex;
+            color: black;
+            text-decoration-line: none;
+            margin-top: 14px
+        }
+        #Passwd h3{
+            float:left;
+            margin-top: 4px;
+
+        }
+        #h5{
+            display: flex;
+        }
+        #button1{
+            border-radius: 10px;
+            border: 3px solid black; /* 테두리를 추가하고 색상을 검정색으로 설정합니다. */
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); /* 그림자 추가 */
+            font-size: 17px;
+            font-family: 'Black Han Sans', sans-serif;
+            font-weight: lighter;
+            width: 200px;
+        }
+        #header {
+            display: flex;
+            align-items: center;
+            position: fixed; /* 헤더를 고정합니다. */
+            top: 0; /* 화면 상단에 고정합니다. */
+            width: 100%; /* 헤더의 너비를 100%로 설정하여 화면 너비에 맞게 확장됩니다. */
+            /*background-color: white;*/ /* 헤더 배경색을 설정합니다. */
+            /*padding: 10px;*/ /* 헤더의 패딩을 추가합니다. */
+        }
+
+        #logo {
+            width: 35px; /* PNG 이미지의 너비 조절 */
+            height: 35px; /* PNG 이미지의 높이 조절 */
+        }
+        #title {
+            font-size: 22px; /* 글씨 크기 조절 */
+            margin-left: 10px; /* 글씨와 이미지 사이의 간격 조절 */
+            font-family: 'Black Han Sans', sans-serif;
+            margin-top: 13px;
+            font-weight: lighter;
+        }
+        #cam{
+            display: flex;
+            justify-items: center;
+            justify-content: center;
+            margin-top: 200px;
+        }
+        h3{
+            font-family: 'Black Han Sans', sans-serif;
+            font-weight: lighter;
+            font-size: 22px;
+            padding-top: 30px;
+        }
+    </style>
+    <body>
+<!--
+<div id="h5">
+            <img src="static/images/siren.png" width="20px" height="20px">
+            <h5>삐용삐용</h5>
+        </div>
+   -->
+        <div id="header">
+            <img id="logo" src="../static/images/free-icon-siren-883345.png" alt="삐용 삐용 로고">
+            <h1 id="title">삐용삐용</h1>
+        </div>
+        {% if login == True %}
+
+        <div id="LoginS" style="width:420px; height:240px; border:4px solid black; background-color: #edb1a8">
+            <h3> 안녕하세요, {{username}}님! <br><br>안전한 집을 원하십니까?<br><br> 그럼 사용자 모드를 클릭해주세요.</h3>
+        </div>
+        <form method="POST" action="{{ url_for('redirect_page3') }}">
+            <button id="button1" type="submit" class="mode">사용자 모드</button>
+        </form>
+        <a href={{url_for("logout")}}>Logout</a>
+
+
+        {%else %}
+        <!--
+        <div id="cam">
+            <img src="static/images/webcam3.png" width="50px" height="50px">
+        </div>
+        -->
+
+        <div id="LoginF" style="width:400px; height:400px; border:4px solid black; background-color: #edb1a8">
+
+            <form method="get" id="login" action={{url_for("login")}}>
+            <h2>JINJI GUARD</h2>
+            <div id="ID">
+                <input type="id" id="loginId" name="loginId" placeholder="아이디">
+            </div>
+            <div id="Passwd">
+                <input type="password" id="loginPw" name="loginPw" placeholder="비밀번호">
+            </div>
+            <button type="submit" class="login">Login</button>
+            </form>
+        </div>
+        {%endif%}
+    </body>
+</head>
+</html>

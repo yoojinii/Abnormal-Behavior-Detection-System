@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>삐용삐용</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap" rel="stylesheet">
+
+    <script type="text/javascript">
+        // 3초 후에 로그인 페이지로 자동으로 이동
+        setTimeout(function() {
+            window.location.href = 'http://127.0.0.1:5000/home';
+        }, 3000); // 3초(3000 밀리초)
+    </script>
+    <style>
+    body{
+        background-color: #F5E1DA;
+        margin: 0; /* Body의 기본 마진을 제거해줘 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    span{
+        font-family: 'Black Han Sans', sans-serif;
+        color: darksalmon;
+        font-size: 75px;
+        font-weight: lighter;
+        text-align: center; /* 텍스트를 왼쪽으로 정렬 */
+    }
+    #splash img{
+        width: 80px;
+        height: 80px;
+        margin: -20px 7px 0 14px;
+    }
+    #splash {
+      display: flex;
+      align-items: center; /* 수직 정렬 */
+    }
+    #sir1{
+        padding: 7px;
+        align-items: center;
+    }
+    #sir2{
+        padding: -5px;
+        align-items: center;
+    }
+</style>
+</head>
+<body>
+    <div id="splash">
+        <img id=sir1 src="../static/images/free-icon-siren-883345.png" style="vertical-align: middle">
+            <span>  삐용 삐용 </span>
+        <img id=sir2 src="../static/images/free-icon-siren-883345.png" style="vertical-align: middle">
+    </div>
+</body>
+</html>
